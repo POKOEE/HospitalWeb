@@ -129,3 +129,4 @@ C:\Users\Acer\Desktop\HospitalWeb\obj\Debug\net8.0\refint\HospitalWeb.dll
 C:\Users\Acer\Desktop\HospitalWeb\obj\Debug\net8.0\HospitalWeb.pdb
 C:\Users\Acer\Desktop\HospitalWeb\obj\Debug\net8.0\HospitalWeb.genruntimeconfig.cache
 C:\Users\Acer\Desktop\HospitalWeb\obj\Debug\net8.0\ref\HospitalWeb.dll
+C:\Users\Acer\Desktop\HospitalWeb\obj\Debug\net8.0\HospitalWeb.sourcelink.json
