@@ -1,0 +1,34 @@
+@model HospitalWeb.Models.Doctor
+
+@{
+    ViewData["Title"] = "Новый врач";
+}
+
+<h1>Добавить врача</h1>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="FullName" class="form-label"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Specialization" class="form-label"></label>
+        <input asp-for="Specialization" class="form-control" />
+        <span asp-validation-for="Specialization" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Office" class="form-label"></label>
+        <input asp-for="Office" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label"></label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Сохранить</button>
+    <a asp-action="Index" class="btn btn-secondary">Назад</a>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

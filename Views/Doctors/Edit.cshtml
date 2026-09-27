@@ -1,0 +1,46 @@
+@model HospitalWeb.Models.Doctor
+
+@{
+    ViewData["Title"] = "Редактировать врача";
+}
+
+<h1>Редактировать врача</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3">
+                <label asp-for="FullName" class="form-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Specialization" class="form-label"></label>
+                <input asp-for="Specialization" class="form-control" />
+                <span asp-validation-for="Specialization" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Office" class="form-label"></label>
+                <input asp-for="Office" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Phone" class="form-label"></label>
+                <input asp-for="Phone" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-warning">Сохранить</button>
+            <a asp-action="Index" class="btn btn-secondary">Назад</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
