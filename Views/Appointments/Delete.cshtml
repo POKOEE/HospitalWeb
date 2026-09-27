@@ -1,0 +1,24 @@
+@model HospitalWeb.Models.Appointment
+
+@{
+    ViewData["Title"] = "Удалить приём";
+}
+
+<h1 class="text-danger">Удалить запись на приём?</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Дата</dt>
+    <dd class="col-sm-9">@Model.AppointmentDate.ToString("dd.MM.yyyy HH:mm")</dd>
+
+    <dt class="col-sm-3">Пациент</dt>
+    <dd class="col-sm-9">@Model.Patient?.FullName</dd>
+
+    <dt class="col-sm-3">Врач</dt>
+    <dd class="col-sm-9">@Model.Doctor?.FullName</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

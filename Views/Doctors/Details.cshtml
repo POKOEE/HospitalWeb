@@ -1,0 +1,46 @@
+@model HospitalWeb.Models.Doctor
+
+@{
+    ViewData["Title"] = "Информация о враче";
+}
+
+<h1>@Model.FullName</h1>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Специализация</dt>
+    <dd class="col-sm-9">@Model.Specialization</dd>
+
+    <dt class="col-sm-3">Кабинет</dt>
+    <dd class="col-sm-9">@Model.Office</dd>
+
+    <dt class="col-sm-3">Телефон</dt>
+    <dd class="col-sm-9">@Model.Phone</dd>
+</dl>
+
+<h4>Приёмы</h4>
+@if (Model.Appointments?.Any() == true)
+{
+    <table class="table table-sm">
+        <thead>
+            <tr><th>Дата</th><th>Пациент</th><th>Примечание</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var a in Model.Appointments)
+            {
+                <tr>
+                    <td>@a.AppointmentDate.ToString("g")</td>
+                    <td>@a.Patient?.FullName</td>
+                    <td>@a.Notes</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="text-muted">Приёмов нет.</p>
+}
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Изменить</a>
+<a asp-action="Index" class="btn btn-secondary">Назад</a>
